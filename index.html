@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarePlus Healthcare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>💙 CarePlus</h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#appointment">Appointment</a>
+        <a href="#tips">Health Tips</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button id="themeToggle">🌙</button>
+</header>
+
+<!-- HOME WITH VIDEO -->
+<section id="home" class="hero">
+
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="videos/hospital.mp4.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay">
+        <h2>Your Health, Our Priority</h2>
+        <p>Quality healthcare and compassionate care for everyone.</p>
+        <a href="#appointment" class="btn">Book Appointment</a>
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Healthcare Services</h2>
+
+    <div class="cards">
+        <div class="card">
+            🩺
+            <h3>General Checkup</h3>
+            <p>Regular health examinations.</p>
+        </div>
+
+        <div class="card">
+            ❤️
+            <h3>Cardiology</h3>
+            <p>Heart health and care.</p>
+        </div>
+
+        <div class="card">
+            🧪
+            <h3>Laboratory</h3>
+            <p>Reliable medical tests.</p>
+        </div>
+    </div>
+</section>
+
+<!-- DOCTORS -->
+<section id="doctors">
+    <h2>Meet Our Doctors</h2>
+
+    <div class="cards">
+        <div class="card">
+            <img src="image/doctor1.png" alt="Doctor">
+            <h3>Dr. Pond</h3>
+            <p>General Physician</p>
+        </div>
+
+        <div class="card">
+            <img src="image/doctor2.png" alt="Doctor">
+            <h3>Dr. Phuwin</h3>
+            <p>Cardiologist</p>
+        </div>
+    </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment">
+    <h2>Book an Appointment</h2>
+
+    <form id="appointmentForm">
+
+        <input type="text"
+               placeholder="Patient Name"
+               required>
+
+        <input type="tel"
+               placeholder="Phone Number"
+               pattern="[0-9]{10}"
+               title="Enter 10 digit phone number"
+               required>
+
+        <select required>
+            <option value="">Choose Doctor</option>
+            <option>Dr. Pond</option>
+            <option>Dr. Phuwin</option>
+        </select>
+
+        <input type="date" required>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <p id="confirmation"></p>
+</section>
+
+<!-- HEALTH TIPS -->
+<section id="tips">
+    <h2>Healthy Living Tips</h2>
+
+    <div class="cards">
+        <div class="card">🥗 Eat a balanced diet</div>
+        <div class="card">💧 Drink enough water</div>
+        <div class="card">😴 Get proper sleep</div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About CarePlus</h2>
+
+    <img src="image/building.jpg"
+         alt="Hospital"
+         width="400">
+
+    <p>
+        CarePlus is a healthcare website designed to provide
+        information about medical services, doctors and
+        appointment enquiries.
+    </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <p>📍 Coimbatore, Tamil Nadu</p>
+    <p>📞 +91 98765 43210</p>
+    <p>✉️ careplus@example.com</p>
+</section>
+
+<footer>
+    <p>© 2026 CarePlus Healthcare | All Rights Reserved</p>
+</footer>
+
+<script>
+
+// DARK AND LIGHT MODE
+const themeButton = document.getElementById("themeToggle");
+
+themeButton.addEventListener("click", function() {
+
+    document.body.classList.toggle("dark-mode");
+
+    themeButton.textContent =
+        document.body.classList.contains("dark-mode")
+        ? "☀️" : "🌙";
+
+});
+
+// APPOINTMENT CONFIRMATION
+const form = document.getElementById("appointmentForm");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    document.getElementById("confirmation").textContent =
+        "Thank you! Your appointment enquiry has been received.";
+
+    form.reset();
+
+});
+
+</script>
+
+</body>
+</html>
